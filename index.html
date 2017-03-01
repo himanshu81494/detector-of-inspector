@@ -1,9 +1,30 @@
-# detector-of-inspector
-detect inspector opened in current tab of browser
-
-
-```javascript
-var detectOpened = function(){
+<!DOCTYPE html>
+<html>
+<head>
+	<title>detector-of-inspector</title>
+</head>
+<style type="text/css">
+	body{
+		font-family: Courier;
+		color: white;
+		background-color: teal;
+		padding: 10%;
+	}
+	a{
+		color: white;
+		text-decoration: none;
+	}
+	a:hover{
+		text-decoration: underline;
+	}
+</style>
+<body>
+	<h1>Dare you open Inspector on this Tab(Ctrl+Shift+i)</h1>
+	<ul>
+		<li><a href="https://github.com/himanshu81494/detector-of-inspector">source</a></li>
+	</ul>
+	<script type="text/javascript">
+		var detectOpened = function(){
 			var elem = new Image();
 			Object.defineProperty(elem, 'id', {
 				get : function(){
@@ -15,10 +36,8 @@ var detectOpened = function(){
 			});
 			console.log("Hello", elem);
 		};
-```
 
-```javascript
-var detectClosed = function(){
+		var detectClosed = function(){
 			var elem = new Image();
 			var timeout = null;
 			Object.defineProperty(elem, 'id', {
@@ -33,4 +52,9 @@ var detectClosed = function(){
 					setTimeout(function(){console.log(elem)}, 1000);
 				}
 			});
-```
+			console.log(elem);
+		};
+		detectOpened();
+	</script>
+</body>
+</html>
